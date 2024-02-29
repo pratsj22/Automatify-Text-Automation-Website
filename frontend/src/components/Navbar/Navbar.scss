@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+.navbar{
+    a{
+        text-decoration: none;
+    }
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    // background: linear-gradient(90deg, #000851 0%, #3585e0 100%);
+    background-color: #000851;
+    .left{
+        margin: 10px;
+        font-family: 'Quantico', sans-serif;
+        font-size: 40px;
+        color: rgb(226, 219, 219);
+        font-weight: bold;
+    }
+    .right{
+        display: flex;
+        gap: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 20px;
+        .item{
+            color: white;
+        }
+    }
+}

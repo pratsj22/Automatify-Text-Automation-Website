@@ -1,0 +1,31 @@
+.App {
+  height: 100%;
+  text-align: center;
+}
+html,body{
+  height: 100%;
+}
+::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: grey;
+  border-right: none;
+  border-left: none;
+}
+
+::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 10px; 
+}
+
+::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 10px;
+}
