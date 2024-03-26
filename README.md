@@ -3,9 +3,3 @@
 ![Screenshot 2024-03-01 015338](https://github.com/pratsj22/Automatify-Text-Automation-Website/assets/74464235/e68494da-f58b-420d-a5f7-97f038a179fc)
 ![Screenshot 2024-03-01 015425](https://github.com/pratsj22/Automatify-Text-Automation-Website/assets/74464235/b71027b7-4e7d-488f-8d42-fd3d442b7deb)
 ![Screenshot 2024-03-01 015355](https://github.com/pratsj22/Automatify-Text-Automation-Website/assets/74464235/bf6c1350-79fe-40df-bc79-76179bc4e67c)
-
-To run this project run 
-npm i
-inside the frontend folder
-and for backend install the dependencies and run the flask server
-python app.py
