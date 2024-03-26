@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.language-translator {
+    svg {
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 659px;
+    background: linear-gradient(90deg, #00143b 0%, #5a86ed 150%);
+
+    .loader {
+        position: absolute;
+        bottom: 47%;
+        left: 39%;
+        color: #5a86ed;
+    }
+
+    .heading {
+        margin-bottom: 45px;
+
+        span {
+            font-size: 38px;
+            font-family: Agbalumo;
+            color: rgb(223, 218, 218);
+        }
+
+        div {
+            color: white;
+            font-size: 17px;
+            font-family: serif;
+        }
+    }
+
+    .container {
+        display: flex;
+        padding: 10px 30px;
+        background-color: rgb(172, 193, 255);
+        margin-bottom: 50px;
+        .left {
+            position: relative;
+            border-right: 1px solid #00143b;
+
+            textarea {
+                resize: none;
+                padding: 10px 20px;
+                border: none;
+                margin-right: 15px;
+                font-size: 16px;
+                margin-bottom: 10px;
+                background-color: rgb(172, 193, 255);
+            }
+
+            h1 {
+                border-bottom: 1px solid #00143b;
+                margin: 10px;
+                padding-bottom: 10px;
+                font-size: 28px;
+                color: rgb(16, 16, 16);
+                font-family: Roboto Slab;
+            }
+
+            .paste-button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 50%;
+                left: 38%;
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 10px;
+                font-weight: 500;
+                font-size: 16px;
+                cursor: pointer;
+
+                svg {
+                    color: black;
+                }
+
+                &:active {
+                    transform: translateY(3px);
+                }
+
+            }
+
+
+        }
+
+        .right {
+            position: relative;
+
+            h1 {
+                border-bottom: 1px solid #00143b;
+                margin: 10px;
+                padding-bottom: 10px;
+                font-size: 28px;
+                color: rgb(8, 8, 8);
+                font-family: Roboto Slab;
+            }
+
+            textarea {
+                resize: none;
+                font-size: 16px;
+                border: none;
+                margin-left: 15px;
+                padding: 10px 20px;
+                background-color: rgb(172, 193, 255);
+            }
+
+            button:active {
+                transform: translateY(3px);
+            }
+
+            button {
+                position: absolute;
+                top: 105px;
+                right: 0px;
+                background-color: rgba(0, 0, 0, 0);
+                border: none;
+                font-size: 20px;
+            }
+
+        }
+
+        .select{
+            width: 50%;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+    }
+}
