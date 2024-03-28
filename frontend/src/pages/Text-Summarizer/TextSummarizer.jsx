@@ -24,7 +24,7 @@ const TextSummarizer = () => {
         }
         setData("")
         trackPromise(
-        axios.post('/api', {
+        axios.post(`${process.env.REACT_APP_API_URL}/api`, {
             msg,
             len
         }))
@@ -70,6 +70,7 @@ const TextSummarizer = () => {
         if (message) setDisplay("none");
         else setDisplay("flex");
     }
+console.log(process.env.REACT_APP_API_URL);
 
     const handleDownload = () => {
         if (data) {

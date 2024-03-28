@@ -11,7 +11,7 @@ const Result = () => {
   const [data, setData] = useState({})
   const select = useSelector(state => state.images)
   useEffect(() => {
-    axios.get('/file')
+    axios.get(`${process.env.REACT_APP_API_URL}/file`)
       .then(res => {
         setData(res.data)
       })

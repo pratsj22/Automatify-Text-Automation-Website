@@ -20,7 +20,7 @@ const DragOrDrop = () => {
         setProgress(prev => {
             return { ...prev, started: true }
         })
-        axios.post('/file', files, {
+        axios.post(`${process.env.REACT_APP_API_URL}/file`, files, {
             onUploadProgress: (progress) => {
                 setProgress(prev => {
                     return { ...prev, pc: progress.progress * 100 }

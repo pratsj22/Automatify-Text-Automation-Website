@@ -21,7 +21,7 @@ const LanguageTranslator = () => {
         fetchLanguages();
     }, []);
     useEffect(() => {
-        axios.post('/detect-language', { text })
+        axios.post(`${process.env.REACT_APP_API_URL}/detect-language`, { text })
         .then((res)=> setInputLanguage(res.data['detected_language']))
         .catch((error)=>console.log(error))
     }, [text])
@@ -29,7 +29,7 @@ const LanguageTranslator = () => {
     useEffect(() => {
         if(!text) setData("")
         if(inputLanguage){
-            axios.post('/translate', { text,inputLanguage,targetLanguage })
+            axios.post(`${process.env.REACT_APP_API_URL}/translate`, { text,inputLanguage,targetLanguage })
             .then((res)=> setData(res.data['translated_text']))
             .catch((error)=>console.log(error))
         }
@@ -37,7 +37,7 @@ const LanguageTranslator = () => {
     
     const fetchLanguages = async () => {
         try {
-            const response = await axios.get('/languages');
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/languages`);
             setInputLanguageOptions(response.data.languages.map(lang => ({ value: lang.code, label: lang.name })));
             setTargetLanguageOptions(response.data.languages.map(lang => ({ value: lang.code, label: lang.name })));
         } catch (error) {
