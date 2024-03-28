@@ -11,7 +11,7 @@ const Result = () => {
   const [data, setData] = useState({})
   const select = useSelector(state => state.images)
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000/file')
+    axios.get('/file')
       .then(res => {
         setData(res.data)
       })
@@ -43,7 +43,6 @@ const Result = () => {
   const startOver = () => {
     window.location.reload()
   }
-  console.log(data)
   return (
     <div className='result'>
       <div className="result-box">

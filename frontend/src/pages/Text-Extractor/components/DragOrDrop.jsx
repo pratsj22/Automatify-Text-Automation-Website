@@ -20,7 +20,7 @@ const DragOrDrop = () => {
         setProgress(prev => {
             return { ...prev, started: true }
         })
-        axios.post('http://127.0.0.1:5000/file', files, {
+        axios.post('/file', files, {
             onUploadProgress: (progress) => {
                 setProgress(prev => {
                     return { ...prev, pc: progress.progress * 100 }

@@ -1,12 +1,14 @@
 from flask import Flask,jsonify,request
-from flask_cors import CORS
 from summarize import generate_summary
 from extractor import extract_text_from_image
 from translate import translate_text, detect_language
 from googletrans import LANGUAGES
 
 app= Flask(__name__)
-CORS(app)
+
+@app.route('/')
+def hello():
+    return "hello"
 
 @app.route('/api',methods=['POST'])
 def putData():

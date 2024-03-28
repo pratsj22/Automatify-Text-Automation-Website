@@ -21,7 +21,7 @@ const LanguageTranslator = () => {
         fetchLanguages();
     }, []);
     useEffect(() => {
-        axios.post('http://127.0.0.1:5000/detect-language', { text })
+        axios.post('/detect-language', { text })
         .then((res)=> setInputLanguage(res.data['detected_language']))
         .catch((error)=>console.log(error))
     }, [text])
@@ -29,7 +29,7 @@ const LanguageTranslator = () => {
     useEffect(() => {
         if(!text) setData("")
         if(inputLanguage){
-            axios.post('http://127.0.0.1:5000/translate', { text,inputLanguage,targetLanguage })
+            axios.post('/translate', { text,inputLanguage,targetLanguage })
             .then((res)=> setData(res.data['translated_text']))
             .catch((error)=>console.log(error))
         }
@@ -37,7 +37,7 @@ const LanguageTranslator = () => {
     
     const fetchLanguages = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:5000/languages');
+            const response = await axios.get('/languages');
             setInputLanguageOptions(response.data.languages.map(lang => ({ value: lang.code, label: lang.name })));
             setTargetLanguageOptions(response.data.languages.map(lang => ({ value: lang.code, label: lang.name })));
         } catch (error) {
