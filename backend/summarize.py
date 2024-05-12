@@ -3,7 +3,7 @@ import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize
 from sklearn.metrics.pairwise import cosine_similarity
 from gensim.models import Word2Vec
-# nltk.download('punkt')
+nltk.download('punkt')
 
 def preprocess_text(text):
     sentences = sent_tokenize(text)

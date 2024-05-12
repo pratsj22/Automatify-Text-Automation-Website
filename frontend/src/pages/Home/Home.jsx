@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Home.scss'
 import Title from './components/Title'
-
+import axios from 'axios'
 const Home = () => {
+  useEffect(()=>{
+    const loadServer=async()=>{
+      await axios.get(process.env.REACT_APP_API_URL);
+    }
+    loadServer();
+  },[])
   return (
     <div className="home">
       <div className='main' style={{ backgroundImage: 'url(/back.jpg)' }}>
