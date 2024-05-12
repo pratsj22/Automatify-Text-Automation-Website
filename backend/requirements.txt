@@ -10,3 +10,4 @@ pillow
 googletrans==4.0.0-rc1
 python-dotenv
 requests
+scipy==1.12
