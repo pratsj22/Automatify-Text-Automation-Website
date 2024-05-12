@@ -1,0 +1,231 @@
+.text-extractor {
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(41, 87, 160, 1) 0%, rgba(32, 18, 101, 1) 100%);
+    min-height: 659px;
+    .container {
+        margin-bottom: 20px;
+        margin-top: 40px;
+        .upload {
+            display: flex;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 1000px;
+            height: 480px;
+            position: relative;
+            background-color: rgba(152, 181, 244, 0.8);
+
+            .file-upload-area {
+                flex: 1.1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 20px 0;
+                margin: 10px;
+                width: 100%;
+                border: 2px dashed black;
+                border-radius: 5px;
+
+                h3 {
+                    margin: 0;
+                    font-weight: 500;
+                    font-size: 20px;
+                }
+
+                .select-files {
+                    padding: 7px;
+                    margin: 10px;
+                    font-size: 16px;
+                    border: 1px solid black;
+                    background-color: rgb(111, 153, 243);
+                    cursor: pointer;
+                }
+            }
+
+            .file-show-area {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                flex: 1;
+                padding: 10px;
+                overflow: scroll;
+                width: 100%;
+                margin-top: 5px;
+                margin-bottom: 40px;
+
+                .after-upload {
+                    display: flex;
+                    justify-content: space-between;
+                    border: 0.1px solid black;
+                    border-radius: 10px;
+                    width: 90%;
+                    padding: 10px;
+                    height: 80px;
+
+                    .name {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+
+                        .file-name {
+                            width: 200px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        progress {
+                            width: 100%;
+                            accent-color: rgb(10, 14, 138);
+                        }
+                    }
+
+                    button {
+                        border: none;
+                        background: transparent;
+                        font-size: 20px;
+                        cursor: pointer;
+                    }
+
+                    img {
+                        box-shadow: 0 0 1px black;
+                        border-radius: 5px;
+                        height: 80px;
+                        width: 100px;
+                    }
+                }
+
+                .clear-all {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 2%;
+                    padding: 10px 20px;
+                    font-size: 15px;
+                    border: 1px solid;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    // color: white;
+                    background-color: rgb(111, 153, 243);
+                }
+            }
+        }
+        .convert:active {
+            transform: translateY(3px);
+            box-shadow: 1px 1px black;
+        }
+        .convert {
+            border: 1px solid black;
+            font-size: 20px;
+            padding: 10px;
+            margin: 20px 10px;
+            margin-bottom: 51px;
+            font-weight: 500;
+            box-shadow: 3px 3px black;
+            font-weight: 500;
+            border-radius: 5px;
+            cursor: pointer;
+            background: linear-gradient(rgb(22, 81, 208),rgb(88, 153, 231));
+            svg {
+                margin: 0 5px;
+            }
+        }
+
+        .result {
+            border: 1px solid black;
+            border-radius: 20px;
+            height: fit-content;
+            padding: 30px 10px;
+
+            position: relative;
+            background-color: rgba(152, 181, 244, 0.6);
+
+            width: 900px;
+
+            .result-box {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 50px;
+
+            }
+
+            .result-area {
+                border: 0.5px solid rgb(56, 56, 56);
+                border-radius: 10px;
+                width: 80%;
+                height: 130px;
+                display: flex;
+                margin: 5px;
+
+                .left {
+                    flex: 1;
+                    padding: 5px;
+
+                    img {
+                        border-radius: 5px;
+                        box-shadow: 0 0 5px gray;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .right {
+                    flex: 4;
+                    padding: 5px;
+                    position: relative;
+
+                    textarea {
+                        border-radius: 5px;
+                        box-sizing: border-box;
+                        box-shadow: 0 0 5px gray;
+                        padding: 10px;
+                        padding-left: 15px;
+                        padding-right: 30px;
+                        border: none;
+                        resize: none;
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    button {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        background-color: rgba(0, 0, 0, 0);
+                        border: none;
+                        font-size: 18px;
+                        color: black;
+                        cursor: pointer;
+                    }
+
+                    .download {
+                        position: absolute;
+                        top: 35px;
+                        right: 10px;
+                    }
+                }
+
+            }
+
+            button:active {
+                transform: translateY(3px);
+            }
+
+            .start-over {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 16px;
+                padding: 11px;
+                border: none;
+                cursor: pointer;
+
+                svg {
+                    padding: 0 2px;
+                }
+            }
+
+        }
+    }
+}

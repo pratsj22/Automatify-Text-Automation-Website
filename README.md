@@ -1,0 +1,5 @@
+![Screenshot 2024-03-01 015253](https://github.com/pratsj22/Automatify-Text-Automation-Website/assets/74464235/fc4e9723-4e9a-41d9-a63f-8368c8cbe58c)
+![Screenshot 2024-03-01 015310](https://github.com/pratsj22/Automatify-Text-Automation-Website/assets/74464235/6fe9a8f7-9a3d-4a77-b4ba-a71629a7e785)
+![Screenshot 2024-03-01 015338](https://github.com/pratsj22/Automatify-Text-Automation-Website/assets/74464235/e68494da-f58b-420d-a5f7-97f038a179fc)
+![Screenshot 2024-03-01 015425](https://github.com/pratsj22/Automatify-Text-Automation-Website/assets/74464235/b71027b7-4e7d-488f-8d42-fd3d442b7deb)
+![Screenshot 2024-03-01 015355](https://github.com/pratsj22/Automatify-Text-Automation-Website/assets/74464235/bf6c1350-79fe-40df-bc79-76179bc4e67c)
