@@ -9,10 +9,15 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    height: 659px;
+    padding-top: 20px;
+    height: calc(100% - 90px);
     background: linear-gradient(90deg, #00143b 0%, #5a86ed 150%);
+
+    @media screen and (max-width:435px) {
+        padding-top: 40px;
+        height: auto;
+    }
 
     .loader {
         position: absolute;
@@ -23,17 +28,29 @@
 
     .heading {
         margin-bottom: 45px;
+        @media screen and (max-width:435px) {
+            margin-bottom: 30px;
+        }
 
         span {
             font-size: 38px;
             font-family: Agbalumo;
             color: rgb(223, 218, 218);
+
+            @media screen and (max-width:435px) {
+                font-size: 30px;
+            }
         }
 
         div {
             color: white;
             font-size: 17px;
             font-family: serif;
+
+            @media screen and (max-width:435px) {
+                font-size: 12px;
+            }
+
         }
     }
 
@@ -42,9 +59,23 @@
         padding: 10px 30px;
         background-color: rgb(172, 193, 255);
         margin-bottom: 50px;
+
+        @media screen and (max-width:435px) {
+            width: 100%;
+            flex-direction: column;
+            gap: 40px;
+            background: none;
+            padding: 0;
+        }
+
         .left {
             position: relative;
             border-right: 1px solid #00143b;
+
+            @media screen and (max-width:435px) {
+                background-color: rgb(172, 193, 255);
+                height: 300px;
+            }
 
             textarea {
                 resize: none;
@@ -54,6 +85,17 @@
                 font-size: 16px;
                 margin-bottom: 10px;
                 background-color: rgb(172, 193, 255);
+
+                &:focus {
+                    outline: 0;
+                }
+
+                @media screen and (max-width:435px) {
+                    width: 90%;
+                    margin: 0;
+                    padding: 0;
+                    height: 60%;
+                }
             }
 
             h1 {
@@ -86,7 +128,9 @@
                 &:active {
                     transform: translateY(3px);
                 }
-
+                @media screen and (max-width:435px) {
+                    font-size: 12px;
+                }
             }
 
 
@@ -104,6 +148,11 @@
                 font-family: Roboto Slab;
             }
 
+            @media screen and (max-width:435px) {
+                background-color: rgb(172, 193, 255);
+                height: 300px;
+            }
+
             textarea {
                 resize: none;
                 font-size: 16px;
@@ -111,6 +160,17 @@
                 margin-left: 15px;
                 padding: 10px 20px;
                 background-color: rgb(172, 193, 255);
+
+                &:focus {
+                    outline: 0;
+                }
+
+                @media screen and (max-width:435px) {
+                    width: 90%;
+                    margin: 0;
+                    padding: 0;
+                    height: 60%;
+                }
             }
 
             button:active {
@@ -128,7 +188,7 @@
 
         }
 
-        .select{
+        .select {
             width: 50%;
             margin: auto;
             margin-bottom: 10px;

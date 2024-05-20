@@ -4,13 +4,16 @@ import { uploadFile, removeFile, reset } from '../../../store/FilesSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan, faFolderOpen, faFile } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
+import useMediaQuery from '../../../hooks/useMedia';
 
 const DragOrDrop = () => {
     const [files, setFiles] = useState(null);
     const [msg, setMsg] = useState(null);
+    const [display,setDisplay]=useState('flex');
     const [progress, setProgress] = useState({ started: false, pc: 0 });
     const inputRef = useRef();
     const dispatch = useDispatch();
+    const isMobile = useMediaQuery("(max-width:435px)")
     const select = useSelector(state => state.images);
     useEffect(() => {
         if (!files) {
@@ -36,6 +39,7 @@ const DragOrDrop = () => {
                 setMsg("Upload Failed")
             }
             )
+        
     }, [files])
     const handleDragover = (e) => {
         e.preventDefault();
@@ -50,6 +54,7 @@ const DragOrDrop = () => {
             }))
         )
         )
+        if(isMobile)setDisplay('none')
     }
     const handleUpload = (e) => {
         setFiles(e.target.files);
@@ -60,13 +65,19 @@ const DragOrDrop = () => {
             }))
         )
         )
+        if(isMobile)setDisplay('none')
+
+    }
+    const clearAll=()=>{
+        if(isMobile)setDisplay('none')
+        dispatch(reset());
     }
     const onDelete = (item) => {
         dispatch(removeFile(item))
     }
     return (
         <div className="upload">
-            <div className="file-upload-area" onDragOver={handleDragover} onDrop={handleDrop}>
+            <div className="file-upload-area" onDragOver={handleDragover} onDrop={handleDrop} style={{display:display}}>
                 <FontAwesomeIcon icon={faFolderOpen} size='xl' />
                 <h3>Drag & drop files</h3>
                 <span>Or</span>
@@ -94,7 +105,7 @@ const DragOrDrop = () => {
                     )
                 }
                 {select[0] &&
-                    <button className='clear-all' onClick={() => dispatch(reset())}>Clear All</button>
+                    <button className='clear-all' onClick={() => clearAll()}>Clear All</button>
                 }
             </div>
         </div>

@@ -2,7 +2,7 @@
   height: 100%;
   text-align: center;
 }
-html,body{
+html,body,#root{
   height: 100%;
 }
 ::-webkit-scrollbar {

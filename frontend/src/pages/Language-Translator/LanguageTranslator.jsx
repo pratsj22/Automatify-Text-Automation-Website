@@ -22,19 +22,19 @@ const LanguageTranslator = () => {
     }, []);
     useEffect(() => {
         axios.post(`${process.env.REACT_APP_API_URL}/detect-language`, { text })
-        .then((res)=> setInputLanguage(res.data['detected_language']))
-        .catch((error)=>console.log(error))
+            .then((res) => setInputLanguage(res.data['detected_language']))
+            .catch((error) => console.log(error))
     }, [text])
 
     useEffect(() => {
-        if(!text) setData("")
-        if(inputLanguage){
-            axios.post(`${process.env.REACT_APP_API_URL}/translate`, { text,inputLanguage,targetLanguage })
-            .then((res)=> setData(res.data['translated_text']))
-            .catch((error)=>console.log(error))
+        if (!text) setData("")
+        if (inputLanguage) {
+            axios.post(`${process.env.REACT_APP_API_URL}/translate`, { text, inputLanguage, targetLanguage })
+                .then((res) => setData(res.data['translated_text']))
+                .catch((error) => console.log(error))
         }
-    }, [targetLanguage,text,inputLanguage])
-    
+    }, [targetLanguage, text, inputLanguage])
+
     const fetchLanguages = async () => {
         try {
             const response = await axios.get(`${process.env.REACT_APP_API_URL}/languages`);
@@ -88,9 +88,7 @@ const LanguageTranslator = () => {
                         options={inputLanguageOptions}
                         onChange={(selectedOption) => setInputLanguage(selectedOption.label)}
                     />
-                    <form action="POST">
-                        <textarea name="message" value={text} id="input" placeholder='Enter your text here.......' cols="40" rows="15" onChange={(e) => onTextEnter(e.target.value)}></textarea>
-                    </form>
+                    <textarea name="message" value={text} id="input" placeholder='Enter your text here.......' cols="40" rows="15" onChange={(e) => onTextEnter(e.target.value)}></textarea>
                     <div className="paste-button" style={{ display: display }} onClick={pasteText}><FontAwesomeIcon icon={faPaste} />Paste Text</div>
                 </div>
                 <div className="right">

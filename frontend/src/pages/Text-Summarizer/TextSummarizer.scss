@@ -10,10 +10,16 @@
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     flex-direction: column;
-    height: 659px;
+    padding-top: 20px;
+    height: calc(100% - 90px);
     background: linear-gradient(90deg, #00143b 0%, #5a86ed 150%);
+
+    @media screen and (max-width:581px) {
+        padding-top: 40px;
+        // height: calc(100% - 70px);
+    }
 
     .loader {
         position: absolute;
@@ -43,7 +49,11 @@
         flex-direction: column;
         background-color: rgb(172, 193, 255);
         // height: fit-content;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
+
+        @media screen and (max-width:933px) {
+            width: 100%;
+        }
 
         .top-bar {
             border-bottom: 1px solid black;
@@ -64,18 +74,19 @@
                 border-bottom: 3px solid transparent;
                 border-radius: 5px 5px 0 0;
                 cursor: pointer;
+
                 &:hover {
                     background-color: rgba(139, 139, 139, 0.2);
-                    // border-bottom: 3px solid rgb(20, 20, 20);
                 }
             }
+
             .sumlen {
-                // margin-top: 10px;
                 margin-left: 20px;
                 display: flex;
                 align-items: center;
                 gap: 10px;
                 border-bottom: 3px solid transparent;
+
                 input[type=range] {
                     background-color: black;
                     accent-color: rgb(45, 102, 214);
@@ -83,30 +94,104 @@
 
                 div {
                     font-size: 18px;
-                    // font-family: Roboto Slab;
-                    // color: rgb(223, 218, 218);
+                }
+            }
+        }
+
+        .top-bar-mobile {
+            border-bottom: 1px solid black;
+            font-size: 16px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(17, 17, 17);
+            width: 100%;
+
+            .settings {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .mode {
+                    display: flex;
+                    padding: 5px 10px;
+                }
+
+                .top-bar-container {
+                    width: 100%;
+                    padding: 10px 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .summary-mode-title {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                    }
+
+                    .modes {
+                        display: flex;
+                        margin: 5px 0;
+                        border: 1px solid black;
+                        justify-content: space-between;
+                        width: 170px;
+                        border-radius: 1000px;
+                        overflow: hidden;
+
+                        .tabs {
+                            height: 18px;
+                            padding: 6px;
+                        }
+                    }
+                }
+
+                .container-end-bar {
+                    display: flex;
+                    justify-content: center;
+                    padding: 5px 0;
+
+                    .bar {
+                        height: 2px;
+                        width: 50px;
+                        background-color: grey;
+                    }
+                }
+            }
+
+            .text-type {
+                display: flex;
+                border-top: 1px solid black;
+
+                .type {
+                    padding: 10px;
+                    flex: 1;
                 }
             }
         }
 
         .text-field {
             display: flex;
-            // padding: 10px 30px;
-            // margin-bottom: 10px;
+
+            @media screen and (max-width:581px) {
+                display: block;
+            }
 
             .left {
                 position: relative;
                 border-right: 1px solid #00143b99;
-                
+
                 textarea {
                     resize: none;
                     padding: 10px 20px;
                     border: none;
                     font-size: 16px;
                     background-color: rgb(172, 193, 255);
-                    // border-bottom: 1px solid #00143b;
-                    &:focus{
+
+                    &:focus {
                         outline: 0;
+                    }
+
+                    @media screen and (max-width:933px) {
+                        width: 80%;
                     }
                 }
 
@@ -133,11 +218,12 @@
                     }
 
                 }
+
                 button:active {
                     box-shadow: 2px 2px black;
                     transform: translateY(3px);
                 }
-    
+
                 button {
                     border-radius: 10px;
                     font-size: 16px;
@@ -149,6 +235,7 @@
                     color: black;
                     cursor: pointer;
                 }
+
                 .bottom {
                     display: flex;
                     justify-content: flex-end;
@@ -160,16 +247,23 @@
             .right {
                 position: relative;
 
+                @media screen and (max-width:581px) {
+                    display: none;
+                }
+
                 textarea {
                     resize: none;
                     font-size: 16px;
                     border: none;
-                    // margin-left: 15px;
                     padding: 10px 20px;
                     background-color: rgb(172, 193, 255);
-                    // border-bottom: 1px solid #00143b;
-                    &:focus{
+
+                    &:focus {
                         outline: 0;
+                    }
+
+                    @media screen and (max-width:933px) {
+                        width: 80%;
                     }
                 }
 
@@ -188,10 +282,12 @@
                     width: 50px;
                     padding: 10px;
                     border-radius: 1000px;
-                    &:hover{
+
+                    &:hover {
                         background-color: rgba(128, 128, 128, 0.229);
                     }
-                    svg{
+
+                    svg {
                         color: black;
                     }
                 }
