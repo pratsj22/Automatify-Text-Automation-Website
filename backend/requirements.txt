@@ -5,9 +5,10 @@ nltk
 scikit-learn
 numpy
 gensim
-pytesseract
 pillow
 googletrans==4.0.0-rc1
 python-dotenv
 requests
 scipy==1.12
+easyocr
+opencv-python-headless
