@@ -15,6 +15,9 @@ const DragOrDrop = () => {
     const dispatch = useDispatch();
     const isMobile = useMediaQuery("(max-width:435px)")
     const select = useSelector(state => state.images);
+    useEffect(()=>{
+        if(select[0] && isMobile)setDisplay('none');
+    })
     useEffect(() => {
         if (!files) {
             return
@@ -53,11 +56,11 @@ const DragOrDrop = () => {
                 imageURL: URL.createObjectURL(item)
             }))
         )
-        )
-        if(isMobile)setDisplay('none')
+    )
+    
     }
-    const handleUpload = (e) => {
-        setFiles(e.target.files);
+const handleUpload = (e) => {
+    setFiles(e.target.files);
         Array.from(e.target.files).map((item, index) => (
             dispatch(uploadFile({
                 name: item.name,
@@ -65,11 +68,11 @@ const DragOrDrop = () => {
             }))
         )
         )
-        if(isMobile)setDisplay('none')
+        
 
     }
     const clearAll=()=>{
-        if(isMobile)setDisplay('none')
+        if(isMobile)setDisplay('flex')
         dispatch(reset());
     }
     const onDelete = (item) => {

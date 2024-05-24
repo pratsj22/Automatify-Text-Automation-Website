@@ -19,7 +19,6 @@ const TextSummarizer = () => {
     const [inptType, setInputType] = useState(1)
     const isMobile = useMediaQuery("(max-width:581px)")
     const [containerDisplay, setContainerDisplay] = useState(false)
-    console.log(isMobile);
     const submit = () => {
         if (!msg) {
             return toast.error("PLEASE Enter a Text First!", {

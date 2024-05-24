@@ -1,12 +1,23 @@
+import easyocr
+import numpy as np
+import cv2
 from PIL import Image
-import pytesseract
 
-def extract_text_from_image(image_path):
-    try:
-        with Image.open(image_path) as img:
-            pytesseract.pytesseract.tesseract_cmd = r'C:\Users\prath\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
-            text = pytesseract.image_to_string(img)
+def extract_text_from_image(file):
+    # Initialize the EasyOCR reader
+    reader = easyocr.Reader(['en'])  # You can specify multiple languages, e.g., ['en', 'fr']
 
-            return text
-    except Exception as e:
-        return str(e)
+    # Convert file to image
+    with Image.open(file) as img:
+        image = np.array(img)
+
+    # Convert image to RGB (EasyOCR expects RGB format)
+    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    # Perform OCR on the image
+    result = reader.readtext(image_rgb)
+
+    # Extract the text from the result
+    extracted_text = " ".join([res[1] for res in result])
+    
+    return extracted_text

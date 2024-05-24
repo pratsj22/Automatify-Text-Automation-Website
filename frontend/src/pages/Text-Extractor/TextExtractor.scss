@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     background: radial-gradient(circle, rgba(41, 87, 160, 1) 0%, rgba(32, 18, 101, 1) 100%);
-    padding-top: 20px;
-    height: calc(100% - 90px);
+    padding-top: 2px;
+    min-height: calc(100% - 90px);
+    height: fit-content;
     @media screen and (max-width:435px) {
         padding-top: 40px;
     }
