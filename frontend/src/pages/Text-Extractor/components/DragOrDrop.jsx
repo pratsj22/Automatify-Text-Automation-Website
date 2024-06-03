@@ -17,6 +17,7 @@ const DragOrDrop = () => {
     const select = useSelector(state => state.images);
     useEffect(()=>{
         if(select[0] && isMobile)setDisplay('none');
+        else setDisplay('flex')
     })
     useEffect(() => {
         if (!files) {
